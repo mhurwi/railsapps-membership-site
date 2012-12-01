@@ -15,7 +15,7 @@ http://railsapps.github.com/tutorial-rails-stripe-membership-saas.html
 
 todo:
 
-x Set Up the Database
+## x Set Up the Database
 x Create a Default User
 x Seed the Database
 x Test the starter app
@@ -24,23 +24,25 @@ x css for subscription plans
 x Add content pages
 x Check content views
 
-x implement authorization
+## x implement authorization
 x set cancan ability
 x set access limits in content controller
 x test authorization
 
-Registration page
-modify home page
-modify nav links
-override devise registrations controller
-override devise routes
-override devise registration page
-test registration
+## x Registration page
+x modify home page
+x modify nav links
+x override devise registrations controller
+x override devise routes
+x override devise registration page
+x test registration
 
+## Redirect after sign up or login
+modify application controller
+test redirect
 
-Redirect after sign up or login
-Stripe integration
-Account changes
-Stripe webhooks
-Deploy to heroku
+## Stripe integration
+## Account changes
+## Stripe webhooks
+## Deploy to heroku
 
