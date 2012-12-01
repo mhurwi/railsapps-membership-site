@@ -38,8 +38,8 @@ x override devise registration page
 x test registration
 
 ## Redirect after sign up or login
-modify application controller
-test redirect
+x modify application controller
+x test redirect
 
 ## Stripe integration
 ## Account changes
