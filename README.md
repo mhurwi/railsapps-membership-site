@@ -11,10 +11,10 @@ http://railsapps.github.com/
 http://railsapps.github.com/tutorial-rails-stripe-membership-saas.html
 
 todo:
-Set Up the Database
-Create a Default User
-Seed the Database
-Test the starter app
+x Set Up the Database
+x Create a Default User
+x Seed the Database
+x Test the starter app
 replace the home page
 css for subscription plans
 Add content pages
