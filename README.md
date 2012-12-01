@@ -24,10 +24,10 @@ x css for subscription plans
 x Add content pages
 x Check content views
 
-implement authorization
-set cancan ability
-set access limits in content controller
-test authorization
+x implement authorization
+x set cancan ability
+x set access limits in content controller
+x test authorization
 
 Registration page
 modify home page
