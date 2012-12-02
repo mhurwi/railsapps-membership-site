@@ -46,3 +46,13 @@ x test redirect
 ## Stripe webhooks
 ## Deploy to heroku
 
+
+
+Additions:
+## Jekyl Blog
+Using [bloggy](https://github.com/zbruhnke/bloggy)
+to initialize blog: rails g jekyll:blog
+to generate new post:  rake np post-title 
+to generate the static site: rake generate
+config/jekyll contains layouts and posts
+public/blog contains the compiled static site
