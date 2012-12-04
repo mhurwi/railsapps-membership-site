@@ -71,12 +71,12 @@ todo:
 
 ## Stripe webhooks
 
-- Mount the engine for stripe_event gem
-- Modify the Stripe initializer
-- Add an Expire Method to the User Class
-- Send and Expiration Email
-- Set your webhook address in your stripe account settings
-- Testing a stripe webhook event
+- x Mount the engine for stripe_event gem
+- x Modify the Stripe initializer
+- x Add an Expire Method to the User Class
+- x Send and Expiration Email
+- x Set your webhook address in your stripe account settings
+- x Testing a stripe webhook event
 
 ## Deploy to heroku
 
