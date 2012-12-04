@@ -47,6 +47,20 @@ todo:
 
 ## Stripe integration
 
+- x stripe initializer
+- x add virtual attribute to user model
+- x add credit card data to registration form
+- x add js from stripe server
+- x script to conditional execution of page-specific javascript
+- x script for dynamic loading of remote js files
+- x create registrations js file
+- x add javascript for form processing
+- x prepare stripe account
+- x migration for user model
+- modify user model
+- test stripe integration
+
+
 ## Account changes
 
 ## Stripe webhooks
@@ -59,8 +73,8 @@ todo:
 ## Additions to the tutorial
 ### Jekyl Blog
 Using [bloggy](https://github.com/zbruhnke/bloggy)
-to initialize blog: rails g jekyll:blog
-to generate new post:  rake np post-title 
-to generate the static site: rake generate
-config/jekyll contains layouts and posts
-public/blog contains the compiled static site
+
+- to generate new post:  rake np post-title 
+- to generate the static site: rake generate
+- config/jekyll contains layouts and posts
+- public/blog contains the compiled static site
