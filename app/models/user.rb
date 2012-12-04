@@ -7,13 +7,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token
   attr_accessor :stripe_token
   before_save :update_stripe
+  before_destroy :cancel_subscription
 
+  def update_plan(role)
+    self.remove_role(self.roles.first.name)
+    self.add_role(role.name)
+    unless customer_id.nil?
+      customer = Stripe::Customer.retrieve(customer_id)
+      customer.update_subscription(:plan => role.name)
+    end
+  end
+  
   def update_stripe
-    return if email.include?('@example.com') #remove this line in production, it allows for free accounts for *@example.com
+    return if email.include?('@example.com')
     if customer_id.nil?
       if !stripe_token.present?
         raise "Stripe token not present. Can't create account."
@@ -41,6 +50,24 @@ class User < ActiveRecord::Base
     errors.add :base, "Unable to create your subscription. #{e.message}"
     stripe_token = nil
     false
+  end
+  
+  def cancel_subscription
+    unless customer_id.nil?
+      customer = Stripe::Customer.retrieve(customer_id)
+      if (!customer.nil?) && (customer.subscription.status == 'active')
+        customer.cancel_subscription
+      end
+    end
+  rescue Stripe::StripeError => e
+    logger.error e.message
+    errors.add :base, "Unable to cancel your subscription. #{e.message}"
+    false
+  end
+  
+  def expire
+    UserMailer.expire_email(self).deliver
+    destroy
   end
   
 end

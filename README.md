@@ -57,11 +57,18 @@ todo:
 - x add javascript for form processing
 - x prepare stripe account
 - x migration for user model
-- modify user model
-- test stripe integration
+- x modify user model
+- x test stripe integration
 
 
 ## Account changes
+
+- change registration form
+- modify the user model for subscription cancellations
+- modify the user model for subscription plan changes
+- modify the registrations controller for subscription plan changes
+- modify the user controller for subscription plan changes
+- 
 
 ## Stripe webhooks
 
