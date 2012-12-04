@@ -15,7 +15,7 @@ http://railsapps.github.com/tutorial-rails-stripe-membership-saas.html
 
 todo:
 
-## x Set Up the Database
+## Set Up the Database
 
 - x Create a Default User
 - x Seed the Database
@@ -25,13 +25,13 @@ todo:
 - x Add content pages
 - x Check content views
 
-## x implement authorization
+## implement authorization
 
 - x set cancan ability
 - x set access limits in content controller
 - x test authorization
 
-## x Registration page
+## Registration page
 
 - x modify home page
 - x modify nav links
@@ -63,19 +63,25 @@ todo:
 
 ## Account changes
 
-- change registration form
-- modify the user model for subscription cancellations
-- modify the user model for subscription plan changes
-- modify the registrations controller for subscription plan changes
-- modify the user controller for subscription plan changes
-- 
+- x change registration form
+- x modify the user model for subscription cancellations
+- x modify the user model for subscription plan changes
+- x modify the registrations controller for subscription plan changes
+- x modify the user controller for subscription plan changes
 
 ## Stripe webhooks
 
+- Mount the engine for stripe_event gem
+- Modify the Stripe initializer
+- Add an Expire Method to the User Class
+- Send and Expiration Email
+- Set your webhook address in your stripe account settings
+- Testing a stripe webhook event
+
 ## Deploy to heroku
 
-
-
+- modify app/models/user.rb to remove 'return if email.include?('example.com')
+- set up SSL
 
 ## Additions to the tutorial
 ### Jekyl Blog
