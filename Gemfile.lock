@@ -122,8 +122,15 @@ GEM
     maruku (0.6.1)
       syntax (>= 1.0.0)
     mime-types (1.19)
+    mongoid (3.0.15)
+      activemodel (~> 3.1)
+      moped (~> 1.1)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+    moped (1.3.1)
     multi_json (1.4.0)
     nokogiri (1.5.5)
+    origin (1.0.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
@@ -232,6 +239,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.1.0)
   jquery-rails
   launchy (>= 2.1.2)
+  mongoid
   quiet_assets (>= 1.0.1)
   rails (= 3.2.6)
   rolify (>= 3.2.0)

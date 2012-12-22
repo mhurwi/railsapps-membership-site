@@ -1,5 +1,7 @@
 MembershipSite::Application.routes.draw do
 
+  resources :incidents
+
 	mount StripeEvent::Engine => '/stripe'
 
   get "content/silver"
@@ -7,6 +9,11 @@ MembershipSite::Application.routes.draw do
   get "content/gold"
 
   get "content/platinum"
+
+
+
+
+
 
   authenticated :user do
     root :to => 'home#index'

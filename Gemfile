@@ -24,3 +24,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "stripe"
 gem "stripe_event"
 gem "bloggy"
+gem "mongoid"

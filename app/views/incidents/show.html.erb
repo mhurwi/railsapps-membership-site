@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @incident.description %>
+</p>
+
+<p>
+	<b>Attributes</b>
+	<%= @incident.attributes %>
+
+</p>
+
+<p>
+	<b>Feelings:</b>
+	<%= @incident.feeling.each {|f| f} %>
+
+</p>
+
+
+<%= link_to 'Edit', edit_incident_path(@incident) %> |
+<%= link_to 'Back', incidents_path %>
