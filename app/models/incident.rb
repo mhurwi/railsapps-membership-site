@@ -8,6 +8,7 @@ class Incident
   
   embeds_many :feelings, cascade_callbacks: true
   embeds_many :thoughts
+  
 	accepts_nested_attributes_for :feelings , :autosave => true
 	accepts_nested_attributes_for :thoughts, :autosave => true
   
