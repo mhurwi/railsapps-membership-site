@@ -6,17 +6,17 @@
 </p>
 
 <p>
-	<b>Attributes</b>
-	<%= @incident.attributes %>
-
-</p>
-
-<p>
 	<b>Feelings:</b>
-	<%= @feelings %>
-
+	<ul>
+	<% @incident.feelings.each do |f| %>
+		<li><%= f.name %></li>
+	</ul>
+	<% end %>
 	
-
+<div class="span12">
+	<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
+	<div id="newFeelingPartial" style="display:"><%= render 'feelings' %></div>
+</div>
 </p>
 
 

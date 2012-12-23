@@ -1,0 +1,27 @@
+<%= content_tag_for(:li, feeling, :class => "feelingList") do %>
+
+	<div class="row">
+		<div>
+
+			<div class="moveFeeling pull-left"><i class="icon-move"></i></div>
+
+			<span class="btn-group pull-right" >
+			
+			<%= link_to edit_incident_feeling_path(@incident, feeling), :class => "editFeeling" do %><i class="icon-edit"></i><%end%>
+		    <%= link_to [@incident, feeling], :method => :delete, :class => "deleteFeeling", :remote => true do  %>
+		    <i class="icon-trash"></i>
+		    <%end%>
+			
+			</span>
+
+		</div>
+	</div>
+
+
+	<div id="feelingContent" class="well feelingContent">
+		<h5> <%= feeling.name %></h5>
+		<%= raw feeling.intensityBefore %>
+	</div>
+
+
+<% end %>

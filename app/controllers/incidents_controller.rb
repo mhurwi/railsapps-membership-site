@@ -15,10 +15,10 @@ class IncidentsController < ApplicationController
   def show
     @incident = Incident.find(params[:id])
     @feelings = @incident.feelings.all
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @incident }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @incident }
+    # end
   end
 
   # GET /incidents/new

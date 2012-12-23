@@ -1,7 +1,5 @@
 MembershipSite::Application.routes.draw do
 
-  resources :incidents
-
 	mount StripeEvent::Engine => '/stripe'
 
   get "content/silver"
@@ -11,14 +9,19 @@ MembershipSite::Application.routes.draw do
   get "content/platinum"
 
 
-
-
-
-
   authenticated :user do
     root :to => 'home#index'
   end
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => 'registrations'}
   resources :users
+
+
+  resources :incidents do
+    resources :feelings
+    resources :thoughts
+  end
+
+
+
 end
