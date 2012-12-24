@@ -5,35 +5,43 @@
   <%= @incident.description %>
 </p>
 
-<p>
-	<b>Feelings:</b>
-	<ul>
-	<% @incident.feelings.each do |f| %>
-		<li><%= f.name %></li>
-	</ul>
-	<% end %>
-	
-<div class="span12">
-	<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
-	<div id="newFeelingPartial" style="display:none"><%= render 'feelings' %></div>
+<div>
+	<p>
+		<b>Feelings:</b>
+		<ul>
+		<% @incident.feelings.each do |f| %>
+			<li><%= f.name %></li>
+			<li><%= f.intensityBefore %></li>
+			<li><%= f.intensityAfter %></li>
+		<% end %>
+		</ul>
+	</p>
+		<div>
+			<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
+			<div id="newFeelingPartial" style="display:none"><%= render 'feelings' %></div>
+		</div>
 </div>
-</p>
 
 
-<p>
-	<b>Thoughts:</b>
-	<ul>
-	<% @incident.thoughts.each do |f| %>
-		<li><%= f.thought %></li>
-	</ul>
-	<% end %>
-	
-<div class="span12">
-	<div id="addThought" class="btn"><i class="icon-plus"></i> Add a thought</div>
-	<div id="newThoughtPartial" style="display:none"><%= render 'thoughts' %></div>
+<div>
+	<p>
+		<b>Thoughts:</b>
+		<ul>
+		<% @incident.thoughts.each do |f| %>
+			<li><%= f.thought %></li>
+			<li><%= f.distortions %></li>
+			<li><%= f.rationalThought %></li>
+		<% end %>
+		</ul>
+	</p>
+
+		<div>
+			<div id="addThought" class="btn"><i class="icon-plus"></i> Add a thought</div>
+			<div id="newThoughtPartial" style="display:none"><%= render 'thoughts' %></div>
+		</div>
 </div>
-</p>
 
-
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
-<%= link_to 'Back', incidents_path %>
+<div>
+	<%= link_to 'Edit', edit_incident_path(@incident) %> |
+	<%= link_to 'Back', incidents_path %>
+</div>

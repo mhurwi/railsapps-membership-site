@@ -1,18 +1,14 @@
-<div style="padding:20px">
+<div>
 
 	<h>Add thought</h3>
 
-
 	<%= simple_form_for [@incident, Thought.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
-		<%= f.input :thought, :input_html => {:style => "width:98%"} %>
-
-
-	<div class="row">
+		<%= f.input :thought %>
+		<%= f.input :distortions %>
+		<%= f.input :rationalThought %>
 		<div class="btn-group">
-			<span id="closethought" class="btn">Cancel</span><%= f.button :submit, :id => "createthought" %>
+			<span id="closeThought" class="btn">Cancel</span><%= f.button :submit, :id => "createThought" %>
 		</div>
-	</div>
 	<%end%>
-
 
 </div

@@ -1,18 +1,14 @@
-<div style="padding:20px">
+<div>
 
 	<h>Add feeling</h3>
 
-
 	<%= simple_form_for [@incident, Feeling.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
-		<%= f.input :name, :input_html => {:style => "width:98%"} %>
-
-
-	<div class="row">
+		<%= f.input :name %>
+		<%= f.input :intensityBefore %>
+		<%= f.input :intensityAfter %>
 		<div class="btn-group">
 			<span id="closeFeeling" class="btn">Cancel</span><%= f.button :submit, :id => "createFeeling" %>
 		</div>
-	</div>
 	<%end%>
-
 
 </div
