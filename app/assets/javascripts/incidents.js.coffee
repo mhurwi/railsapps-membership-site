@@ -14,8 +14,6 @@ $(document).ready ->
 	  $("#newFeelingPartial").toggle ->
 	    $("#addFeeling").toggle()
 
-
-
 	$("#addThought").click ->
 	  $("#newThoughtPartial").toggle ->
 	    $("#addThought").toggle()

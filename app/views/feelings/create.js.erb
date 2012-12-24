@@ -1,8 +1,7 @@
 
 	$("#feelingModal").modal('hide');
-	$("#feelings").append("<%= escape_javascript(render(@feeling)) %>");
+	$("#feelings-list").append("<%= escape_javascript(render(@feeling)) %>");
 	$("#feelingsTC").append("<%= escape_javascript(render(:partial => 'feelings/feeling_list', :locals =>{:feeling => @feeling})) %>");
-
 	$('#new_feeling').each (function(){
   		this.reset();
 	});

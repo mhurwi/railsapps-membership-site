@@ -15,6 +15,13 @@ http://railsapps.github.com/tutorial-rails-stripe-membership-saas.html
 
 todo:
 
+## CBT app
+- append newly created feeling & thought to show page
+- spec wizard
+
+
+
+
 ## Set Up the Database
 
 - x Create a Default User
