@@ -23,3 +23,9 @@ $(document).ready ->
 	  $("#newThoughtPartial").toggle ->
 	    $("#addThought").toggle()
 
+
+	# Wizard
+	#-------
+	$('#step1-btn').click (e)->
+		e.preventDefault()
+		$(this).show
