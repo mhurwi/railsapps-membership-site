@@ -1,11 +1,9 @@
 <div>
 
-	<h>Add thought</h3>
+	<h>What did you think?</h3>
 
 	<%= simple_form_for [@incident, Thought.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
 		<%= f.input :thought %>
-		<%= f.input :distortions %>
-		<%= f.input :rationalThought %>
 		<div class="btn-group">
 			<span id="closeThought" class="btn">Cancel</span><%= f.button :submit, :id => "createThought" %>
 		</div>

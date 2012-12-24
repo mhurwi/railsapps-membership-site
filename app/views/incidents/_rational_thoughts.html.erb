@@ -1,1 +1,19 @@
-<p>for each thought, provide a more rational alternative thought.</p>
+		<div>
+			<ul>
+				<% @incident.thoughts.each do |thought| %>
+					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+				<%end%>
+			</ul>
+		</div>		
+
+
+
+
+
+		<!--
+
+		- grab collection of @incident.thoughts
+		- for each thought, append a form with field to enter rational version
+		- append each new rational version 1) to each thought here, and 2) to each thought in main incident
+
+		-->

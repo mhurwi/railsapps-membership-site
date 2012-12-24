@@ -1,11 +1,10 @@
 <div>
 
-	<h>Add feeling</h3>
+	<h>What are you feeling?</h3>
 
 	<%= simple_form_for [@incident, Feeling.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
 		<%= f.input :name %>
 		<%= f.input :intensityBefore %>
-		<%= f.input :intensityAfter %>
 		<div class="btn-group">
 			<span id="closeFeeling" class="btn">Cancel</span><%= f.button :submit, :id => "createFeeling" %>
 		</div>

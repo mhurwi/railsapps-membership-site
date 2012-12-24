@@ -1,1 +1,17 @@
-<p>for each feeling, go through and indicate how you feel now, as opposed to how you felt eariler.</p>
+		<div>
+			<ul>
+				<% @incident.feelings.each do |feeling| %>
+					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
+				<%end%>
+			</ul>
+		</div>
+
+
+
+		<!--
+
+		- grab collection of @incident.feelings
+		- for each feeling, indicate new value for intensityAfter
+		- append each new value 1) to list here, and 2) in main incident
+
+		-->

@@ -1,1 +1,17 @@
-<p>for each thought, create an array of distortions apparrent in that thought.</p>
+		<div>
+			<ul>
+				<% @incident.thoughts.each do |thought| %>
+					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+				<%end%>
+			</ul>
+		</div>		
+
+
+		<!--
+
+		- grab collection of @incident.thoughts
+		- for each thought, append a form with field to enter distortions
+		- with button "add another distortion"
+		- append each new distortion 1) to list here, and 2) in main incident
+
+		-->
