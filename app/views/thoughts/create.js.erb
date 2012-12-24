@@ -1,0 +1,8 @@
+
+	$("#thoughtModal").modal('hide');
+	$("#thoughts").append("<%= escape_javascript(render(@thought)) %>");
+	$("#thoughtsTC").append("<%= escape_javascript(render(:partial => 'thoughts/thought_list', :locals =>{:thought => @thought})) %>");
+
+	$('#new_thought').each (function(){
+  		this.reset();
+	});

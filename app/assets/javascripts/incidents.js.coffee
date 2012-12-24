@@ -2,14 +2,26 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+$(document).ready ->
 
-$("#addFeeling").click ->
-  $("#newFeelingPartial").toggle ->
-    $("#addFeeling").toggle()
+		
+	$("#addFeeling").click ->
+	  $("#newFeelingPartial").toggle ->
+	    $("#addFeeling").toggle()
 
 
-$("#createFeeling, #closeFeeling").click ->
-  $("#newFeelingPartial").toggle ->
-    $("#addFeeling").toggle()
+	$("#createFeeling, #closeFeeling").click ->
+	  $("#newFeelingPartial").toggle ->
+	    $("#addFeeling").toggle()
 
-console.log('from incidents.js')
+
+
+	$("#addThought").click ->
+	  $("#newThoughtPartial").toggle ->
+	    $("#addThought").toggle()
+
+
+	$("#createThought, #closeThought").click ->
+	  $("#newThoughtPartial").toggle ->
+	    $("#addThought").toggle()
+

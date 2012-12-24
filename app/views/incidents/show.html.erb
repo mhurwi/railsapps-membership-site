@@ -15,7 +15,22 @@
 	
 <div class="span12">
 	<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
-	<div id="newFeelingPartial" style="display:"><%= render 'feelings' %></div>
+	<div id="newFeelingPartial" style="display:none"><%= render 'feelings' %></div>
+</div>
+</p>
+
+
+<p>
+	<b>Thoughts:</b>
+	<ul>
+	<% @incident.thoughts.each do |f| %>
+		<li><%= f.thought %></li>
+	</ul>
+	<% end %>
+	
+<div class="span12">
+	<div id="addThought" class="btn"><i class="icon-plus"></i> Add a thought</div>
+	<div id="newThoughtPartial" style="display:none"><%= render 'thoughts' %></div>
 </div>
 </p>
 

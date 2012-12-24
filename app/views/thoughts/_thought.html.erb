@@ -1,0 +1,26 @@
+<%= content_tag_for(:li, thought, :class => "thoughtList") do %>
+
+	<div class="row">
+		<div>
+
+			<div class="moveThought pull-left"><i class="icon-move"></i></div>
+
+			<span class="btn-group pull-right" >
+			
+			<%= link_to edit_incident_thought_path(@incident, thought), :class => "editThought" do %><i class="icon-edit"></i><%end%>
+		    <%= link_to [@incident, thought], :method => :delete, :class => "deleteThought", :remote => true do  %>
+		    <i class="icon-trash"></i>
+		    <%end%>
+			
+			</span>
+
+		</div>
+	</div>
+
+
+	<div id="thoughtContent" class="well thoughtContent">
+		<h5> <%= thought.thought %></h5>
+	</div>
+
+
+<% end %>
