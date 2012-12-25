@@ -2,6 +2,11 @@
 			<ul>
 				<% @incident.thoughts.each do |thought| %>
 					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+					<li><%= simple_form_for thought.thought do |d| %>
+								<%= d.input :name %>
+								<%= d.button :submit, :id => 'addDistortion' %>
+							<% end %>
+					</li>
 				<%end%>
 			</ul>
 		</div>		
