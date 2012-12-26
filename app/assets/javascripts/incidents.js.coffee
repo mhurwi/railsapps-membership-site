@@ -22,9 +22,3 @@ $(document).ready ->
 	$("#createThought, #closeThought").click ->
 	  $("#newThoughtPartial").toggle ->
 	    $("#addThought").toggle()
-
-	$('#addDistortions').click ->
-		#this button prepend input to add distortion
-		$(this).prepend('
-			<input type="text" />
-			')

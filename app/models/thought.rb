@@ -7,4 +7,6 @@ class Thought
 
 	embedded_in :incident, :inverse_of => :thoughts
 
+	embeds_many :distortions
+
 end
