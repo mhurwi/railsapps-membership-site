@@ -1,0 +1,24 @@
+<%= content_tag_for(:li, distortion, :class => "distortionList") do %>
+
+	<div>
+		<div>
+
+			<span class="btn-group pull-right" >
+		
+			<%= link_to edit_thought_distortion_path(@thought, distortion), :class => "editDistortion" do %><i class="icon-edit"></i><%end%>
+		    <%= link_to [@thought, distortion], :method => :delete, :class => "deleteDistortion", :remote => true do  %>
+		    <i class="icon-trash"></i>
+		    <%end%>
+			
+			</span>
+
+		</div>
+	</div>
+
+
+	<div id="distortionContent" class="distortionContent">
+		<%= distortion.name %>
+	</div>
+
+
+<% end %>
