@@ -1,11 +1,17 @@
-		<div>
-			<ul>
-				<% @incident.feelings.each do |feeling| %>
-					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
-				<%end%>
-			</ul>
-		</div>
+<div>
 
+	<h>Now that you've analyzed your thinking, how do you feel?</h3>
+
+	<% @incident.feelings.each do |feeling| %>
+		<li><%= feeling.name %></li>
+		<%= simple_form_for [@incident, feeling], :html => {:class => "form-vertical"},:remote => true do |f| %>
+			<%= f.input :intensityAfter %>
+			<div class="btn-group">
+				<span id="closeFeeling" class="btn">Cancel</span><%= f.button :submit, :id => "createFeeling" %>
+			</div>
+		<%end%>
+	<%end%>
+</div>
 
 
 		<!--

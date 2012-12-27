@@ -5,7 +5,7 @@
 	<% @incident.thoughts.each do |thought| %>
 		<li><%= thought.thought %></li>
 		<%= simple_form_for [@incident, thought, Distortion.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
-			<%= f.input :name , :id => "distortion-input"%>
+			<%= f.input :name %>
 			<div class="btn-group">
 				<span id="closeDistortion" class="btn">Cancel</span><%= f.button :submit, :id => "createDistortion" %>
 			</div>

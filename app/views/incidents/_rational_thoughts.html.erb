@@ -1,11 +1,17 @@
-		<div>
-			<ul>
-				<% @incident.thoughts.each do |thought| %>
-					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
-				<%end%>
-			</ul>
-		</div>		
+<div>
 
+	<h>For each thought, can you create a more rational alternative?</h3>
+
+	<% @incident.thoughts.each do |thought| %>
+		<li><%= thought.thought %></li>
+		<%= simple_form_for [@incident, thought], :html => {:class => "form-vertical"},:remote => true do |f| %>
+			<%= f.input :rationalThought %>
+			<div class="btn-group">
+				<span id="closeRationalThought" class="btn">Cancel</span><%= f.button :submit, :id => "createRationalThought" %>
+			</div>
+		<%end%>
+	<%end%>
+</div>
 
 
 

@@ -16,11 +16,16 @@ http://railsapps.github.com/tutorial-rails-stripe-membership-saas.html
 todo:
 
 ## CBT app
-- append newly created feeling & thought to show page
-- spec wizard
+- edit feeling, thought
+- destroy feeling, thought, distortion
+- validations
 
 
 
+DONE:
+
+- x append newly created feeling & thought to show page
+- x spec wizard
 
 ## Set Up the Database
 
