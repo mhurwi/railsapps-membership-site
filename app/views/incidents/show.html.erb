@@ -36,7 +36,7 @@
 		<div class="tab-content wizard-steps" style="min-height:300px;padding:10px;background-color:#fff;">
 			<div id="step1" class="tab-pane active">
 				<div>
-					<h5>Add Thoughts</h5>
+					<h5>Add Feelings</h5>
 					<p>List each different feeling and and how intensely you are experiencing it, on a scale of 1 to 10</p>
 					<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
 					<div id="newFeelingPartial" style="display:none"><%= render 'feelings' %></div>
@@ -56,6 +56,11 @@
 					<p>List all the thoughts you had about this incident.</p>
 					<div id="addThought" class="btn"><i class="icon-plus"></i> Add a thought</div>
 					<div id="newThoughtPartial" style="display:none"><%= render 'thoughts' %></div>
+					<ul id="thoughtsTC" class="nav navlist">
+						<% @incident.thoughts.each do |thought| %>
+							<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+						<%end%>
+					</ul>
 				</div>
 			</div>
 
