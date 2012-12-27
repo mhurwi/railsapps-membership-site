@@ -1,22 +1,12 @@
-		<div>
-			<ul>
-				<% @incident.thoughts.each do |thought| %>
-					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
-					<li><%= simple_form_for thought.thought do |d| %>
-								<%= d.input :name %>
-								<%= d.button :submit, :id => 'addDistortion' %>
-							<% end %>
-					</li>
-				<%end%>
-			</ul>
-		</div>		
+<div>
 
+	<h>What are you feeling?</h3>
 
-		<!--
+	<%= simple_form_for [@thought, Distortion.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
+		<%= f.input :name %>
+		<div class="btn-group">
+			<span id="closeDistortion" class="btn">Cancel</span><%= f.button :submit, :id => "createDistortion" %>
+		</div>
+	<%end%>
 
-		- grab collection of @incident.thoughts
-		- for each thought, append a form with field to enter distortions
-		- with button "add another distortion"
-		- append each new distortion 1) to list here, and 2) in main incident
-
-		-->
+</div>

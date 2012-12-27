@@ -9,4 +9,7 @@ class Thought
 
 	embeds_many :distortions
 
+	accepts_nested_attributes_for :distortions, :autosave => true
+
+	
 end

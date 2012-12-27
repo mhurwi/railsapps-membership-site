@@ -19,7 +19,9 @@ MembershipSite::Application.routes.draw do
 
   resources :incidents do
     resources :feelings
-    resources :thoughts
+    resources :thoughts do
+      resources :distortions
+    end
   end
 
 

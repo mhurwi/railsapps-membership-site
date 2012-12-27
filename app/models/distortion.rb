@@ -5,5 +5,4 @@ class Distortion
 
 	embedded_in :thought, :inverse_of => :distortions
 
-
 end
