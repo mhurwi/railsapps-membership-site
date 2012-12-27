@@ -1,7 +1,5 @@
 
 	$("#distortionModal").modal('hide');
 	$("#distortions-list").append("<%= escape_javascript(render(@distortion)) %>");
-	$("#distortionsTC").append("<%= escape_javascript(render(:partial => 'distortions/distortion_list', :locals =>{:distortion => @distortion})) %>");
-	$('#new_distortion').each (function(){
-  		this.reset();
-	});
+	$("#distortionsTC").append("<%=  escape_javascript(render(:partial => 'distortions/distortion_list', :locals =>{:distortion => @distortion})) %>");
+	$('#distortion_name').val("");

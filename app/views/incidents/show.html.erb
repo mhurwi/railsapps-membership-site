@@ -22,6 +22,11 @@
 			<ul id="thoughtsTC" class="nav navlist">
 				<% @incident.thoughts.each do |thought| %>
 					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+					<ul id="distortionsTC">
+					<% thought.distortions.each do |distortion| %>
+						<li><%= distortion.name %></li>
+					<% end %>
+					</ul
 				<%end%>
 			</ul>
 		</div>		

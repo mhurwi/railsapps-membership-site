@@ -4,9 +4,9 @@ class Thought
 	field :thought, type: String
 	field :distortions, type: Array
 	field :rationalThought, type: String
-
+	attr_accessible :thought, :distortions, :rationalThought
+	
 	embedded_in :incident, :inverse_of => :thoughts
-
 	embeds_many :distortions
 
 	accepts_nested_attributes_for :distortions, :autosave => true

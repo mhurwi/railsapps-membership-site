@@ -53,3 +53,4 @@ ActiveRecord::Schema.define(:version => 20121203021510) do
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
 
 end
+

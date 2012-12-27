@@ -1,12 +1,15 @@
 <div>
 
-	<h>What are you feeling?</h3>
+	<h>For each thought, what distortions do you notice?</h3>
 
-	<%= simple_form_for [@thought, Distortion.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
-		<%= f.input :name %>
-		<div class="btn-group">
-			<span id="closeDistortion" class="btn">Cancel</span><%= f.button :submit, :id => "createDistortion" %>
-		</div>
+	<% @incident.thoughts.each do |thought| %>
+		<li><%= thought.thought %></li>
+		<%= simple_form_for [@incident, thought, Distortion.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
+			<%= f.input :name , :id => "distortion-input"%>
+			<div class="btn-group">
+				<span id="closeDistortion" class="btn">Cancel</span><%= f.button :submit, :id => "createDistortion" %>
+			</div>
+		<%end%>
 	<%end%>
-
 </div>
+

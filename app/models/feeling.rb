@@ -8,6 +8,4 @@ class Feeling
 
 	embedded_in :incident, :inverse_of => :feelings
 
-
-
 end

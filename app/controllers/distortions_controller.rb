@@ -2,8 +2,9 @@ class DistortionsController < ApplicationController
   #before_filter :authenticate_user!
 	
 	def create
-		@thought = Thought.find(params[:thought_id])
-		@distortion = @thought.distortions.create!(params[:distortion])
+    incident = Incident.find(params[:incident_id])
+		thought = incident.thoughts.where(:id => params[:thought_id]).last
+		@distortion = thought.distortions.create!(params[:distortion])
     
     if @distortion.save
       flash[:notice] = "New distortion Added"
