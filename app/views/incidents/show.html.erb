@@ -1,8 +1,9 @@
 <div class="row">
 	<div class="span12">
 		<div class="incident-description">
+			<h3>Incident Report</h3>
 			<p>
-			  <h2>Description:</h2>
+			  <h4>Description of the incident:</h4>
 			  <%= @incident.description %>
 			</p>
 		</div>
@@ -10,7 +11,11 @@
 </div>
 <hr>
 <div class="row">
-	<div id="wizard" class="span12" style="min-height:300px">
+	<div id="wizard" class="span12">
+		<p>
+			<h5>CBT Wizard</h5>
+			Please follow the wizard below and provide additional detail about the incident
+		</p>
 		<!--  Steps for the CBT wizard:
 					1.  Feelings: names & intensityBefore
 					2.  Thoughts
@@ -20,14 +25,14 @@
 				
 		-->
 		<div class="tabbable">
-			<ul id="wizard-nav" class="nav nav-tabs">
+			<ul id="wizard-nav" class="nav nav-tabs" style="margin-bottom:0;padding-bottom:0">
 					<li><a href="#step1"class="active" data-toggle="tab">Step 1</a></li>
 					<li><a href="#step2"class="" data-toggle="tab">Step 2</a></li>
 					<li><a href="#step3"class="" data-toggle="tab">Step 3</a></li>
 					<li><a href="#step4"class="" data-toggle="tab">Step 4</a></li>
 					<li><a href="#step5"class="" data-toggle="tab">Step 5</a></li>
 			</ul>
-		<div class="tab-content wizard-steps">
+		<div class="tab-content wizard-steps" style="min-height:300px;padding:10px;background-color:#fff;">
 			<div id="step1" class="tab-pane active">
 				<div>
 					<p>List each different feeling and and how intensely you are experiencing it, on a scale of 1 to 10</p>
@@ -80,7 +85,7 @@
 <div class="row">
 	<div id="incident-show">	
 		<div class="span6">
-			<h3>Feelings</h3>
+			<h5>Feelings</h5>
 			<ul id="feelingsTC" class="nav navlist">
 				<% @incident.feelings.each do |feeling| %>
 					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
@@ -88,7 +93,7 @@
 			</ul>
 		</div>
 		<div class="span6">
-			<h3>Thoughts</h3>
+			<h5>Thoughts</h5>
 			<ul id="thoughtsTC" class="nav navlist">
 				<% @incident.thoughts.each do |thought| %>
 					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
@@ -97,7 +102,6 @@
 						<li><%= distortion.name %></li>
 					<% end %>
 					</ul>
-					<li>RATIONAL ALTERNATIVE: <%= thought.rationalThought %></li>
 				<%end%>
 			</ul>
 		</div>		
