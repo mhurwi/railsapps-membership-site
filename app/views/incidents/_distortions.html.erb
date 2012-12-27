@@ -1,9 +1,9 @@
 <div>
 
-	<h>For each thought, what distortions do you notice?</h3>
-
+	<h3>For each thought, what distortions do you notice?</h3>
+	<ol>
 	<% @incident.thoughts.each do |thought| %>
-		<li><%= thought.thought %></li>
+	<li><%= thought.thought %></li>
 		<%= simple_form_for [@incident, thought, Distortion.new], :html => {:class => "form-vertical"},:remote => true do |f| %>
 			<%= f.input :name %>
 			<div class="btn-group">
@@ -11,5 +11,6 @@
 			</div>
 		<%end%>
 	<%end%>
+	</ol>
 </div>
 

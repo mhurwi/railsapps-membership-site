@@ -1,44 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-
 <div class="row">
-	<div id="incident-show" class="span3">
+	<div class="span12">
 		<div class="incident-description">
 			<p>
 			  <h2>Description:</h2>
 			  <%= @incident.description %>
 			</p>
-		</div>	
-		<div>
-			<h3>Feelings</h3>
-			<ul id="feelingsTC" class="nav navlist">
-				<% @incident.feelings.each do |feeling| %>
-					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
-				<%end%>
-			</ul>
 		</div>
-		<div>
-			<h3>Thoughts</h3>
-			<ul id="thoughtsTC" class="nav navlist">
-				<% @incident.thoughts.each do |thought| %>
-					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
-					<ul id="distortionsTC">
-					<% thought.distortions.each do |distortion| %>
-						<li><%= distortion.name %></li>
-					<% end %>
-					</ul>
-					<li>RATIONAL ALTERNATIVE: <%= thought.rationalThought %></li>
-				<%end%>
-			</ul>
-		</div>		
-		<div>
-			<%= link_to 'Edit', edit_incident_path(@incident) %> |
-			<%= link_to 'Back', incidents_path %>
-		</div>
-	</div><!-- /incident-show -->
-	
-
-	<div id="wizard" class="span9">
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div id="wizard" class="span12" style="min-height:300px">
 		<!--  Steps for the CBT wizard:
 					1.  Feelings: names & intensityBefore
 					2.  Thoughts
@@ -47,7 +19,7 @@
 					5.  intensityAfter forEach feeling in feelings
 				
 		-->
-		<div class="tabbable tabs-left">
+		<div class="tabbable">
 			<ul id="wizard-nav" class="nav nav-tabs">
 					<li><a href="#step1"class="active" data-toggle="tab">Step 1</a></li>
 					<li><a href="#step2"class="" data-toggle="tab">Step 2</a></li>
@@ -101,7 +73,42 @@
 
 
 
-	</div><!-- /wizard-->
-</div><!-- /row -->
+		</div><!-- /wizard-->
+	</div><!-- /row -->
+</div>
+<hr>
+<div class="row">
+	<div id="incident-show">	
+		<div class="span6">
+			<h3>Feelings</h3>
+			<ul id="feelingsTC" class="nav navlist">
+				<% @incident.feelings.each do |feeling| %>
+					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
+				<%end%>
+			</ul>
+		</div>
+		<div class="span6">
+			<h3>Thoughts</h3>
+			<ul id="thoughtsTC" class="nav navlist">
+				<% @incident.thoughts.each do |thought| %>
+					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+					<ul id="distortionsTC">
+					<% thought.distortions.each do |distortion| %>
+						<li><%= distortion.name %></li>
+					<% end %>
+					</ul>
+					<li>RATIONAL ALTERNATIVE: <%= thought.rationalThought %></li>
+				<%end%>
+			</ul>
+		</div>		
+	</div><!-- /incident-show -->
+</div>
 
-
+<div class="row">
+	<div class="span12">
+		<div>
+			<%= link_to 'Edit', edit_incident_path(@incident) %> |
+			<%= link_to 'Back', incidents_path %>
+		</div>
+	</div>
+</div>
