@@ -31,18 +31,28 @@
 					<li><a href="#step3"class="" data-toggle="tab">Step 3</a></li>
 					<li><a href="#step4"class="" data-toggle="tab">Step 4</a></li>
 					<li><a href="#step5"class="" data-toggle="tab">Step 5</a></li>
+					<li><a href="#summary"class="" data-toggle="tab">Summary</a></li>
 			</ul>
 		<div class="tab-content wizard-steps" style="min-height:300px;padding:10px;background-color:#fff;">
 			<div id="step1" class="tab-pane active">
 				<div>
+					<h5>Add Thoughts</h5>
 					<p>List each different feeling and and how intensely you are experiencing it, on a scale of 1 to 10</p>
 					<div id="addFeeling" class="btn"><i class="icon-plus"></i> Add a feeling</div>
 					<div id="newFeelingPartial" style="display:none"><%= render 'feelings' %></div>
+					<ul id="feelingsTC" class="nav navlist">
+						<% @incident.feelings.each do |feeling| %>
+						<li class="feeling">
+							<a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a>
+						</li>
+						<%end%>
+					</ul>
 				</div>
 			</div>
 
 			<div id="step2" class="tab-pane">
 				<div>
+					<h5>Add Thoughts</h5>
 					<p>List all the thoughts you had about this incident.</p>
 					<div id="addThought" class="btn"><i class="icon-plus"></i> Add a thought</div>
 					<div id="newThoughtPartial" style="display:none"><%= render 'thoughts' %></div>
@@ -50,20 +60,49 @@
 			</div>
 
 			<div id="step3" class="tab-pane">
+				<h5>Add Distortions</h5>
 				<p>For each thought you listed, list all the distortions apparrent in that thought.</p>
 				<div id="newDistortionsPartial" style="display:"><%= render 'distortions' %></div>
 			</div>
 
 			<div id="step4" class="tab-pane">
+				<h5>Add Rational Alternatives</h5>
 				<p>For each thought, provide a more rational alternative.</p>
-				<div id="addRationalThought" class="btn"><i class="icon-plus"></i> Rational version</div>
 				<div id="newRationalThoughtPartial" style="display:"><%= render 'rational_thoughts' %></div>
 			</div>
 
 			<div id="step5" class="tab-pane">
+				<h5>Re-assess Feelings</h5>
 				<p>Now go back to each feeling you listed and indicate how you intensely you feel it now.</p>
-				<div id="addThought" class="btn"><i class="icon-plus"></i> intensityAfter</div>
 				<div id="newIntensityAfterPartial" style="display:"><%= render 'intensity_after' %></div>
+			</div>
+
+			<div id="summary" class="tab-pane">
+				<div class="row">
+					<div id="incident-show">	
+						<div class="offset2 span3">
+							<h5>Feelings</h5>
+							<ul id="feelingsTC" class="nav navlist">
+								<% @incident.feelings.each do |feeling| %>
+									<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
+								<%end%>
+							</ul>
+						</div>
+						<div class="span3">
+							<h5>Thoughts</h5>
+							<ul id="thoughtsTC" class="nav navlist">
+								<% @incident.thoughts.each do |thought| %>
+									<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
+									<ul id="distortionsTC">
+									<% thought.distortions.each do |distortion| %>
+										<li><%= distortion.name %></li>
+									<% end %>
+									</ul>
+								<%end%>
+							</ul>
+						</div>		
+					</div><!-- /incident-show -->
+				</div>
 			</div>
 		</div>
 
@@ -82,31 +121,7 @@
 	</div><!-- /row -->
 </div>
 <hr>
-<div class="row">
-	<div id="incident-show">	
-		<div class="span6">
-			<h5>Feelings</h5>
-			<ul id="feelingsTC" class="nav navlist">
-				<% @incident.feelings.each do |feeling| %>
-					<li class="feeling"><a href="#feeling_<%=feeling.id %>"><%= feeling.name %></a></li>
-				<%end%>
-			</ul>
-		</div>
-		<div class="span6">
-			<h5>Thoughts</h5>
-			<ul id="thoughtsTC" class="nav navlist">
-				<% @incident.thoughts.each do |thought| %>
-					<li class="thought"><a href="#thought_<%=thought.id %>"><%= thought.thought %></a></li>
-					<ul id="distortionsTC">
-					<% thought.distortions.each do |distortion| %>
-						<li><%= distortion.name %></li>
-					<% end %>
-					</ul>
-				<%end%>
-			</ul>
-		</div>		
-	</div><!-- /incident-show -->
-</div>
+
 
 <div class="row">
 	<div class="span12">

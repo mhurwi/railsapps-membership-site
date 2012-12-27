@@ -1,7 +1,5 @@
 <div>
 
-	<h>For each thought, can you create a more rational alternative?</h3>
-
 	<% @incident.thoughts.each do |thought| %>
 		<li><%= thought.thought %></li>
 		<%= simple_form_for [@incident, thought], :html => {:class => "form-vertical"},:remote => true do |f| %>
